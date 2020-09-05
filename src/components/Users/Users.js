@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Avatar from "@material-ui/core/Avatar";
 
-const Users = () => {
-  const [users, setUsers] = useState({});
-  let user = {};
-  for (let i = 0; i < users.length; i++) {
-    user = users[i];
-  }
-  useEffect(() => {
-    const url = "https://randomuser.me/api/?results=5";
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setUsers(data.results));
-  }, []);
-  //   const { large } = user.picture;
-  const photo = user.picture;
-  console.log(photo);
+const Users = (props) => {
+  const { cell, name, picture, email } = props.user;
   return (
-    <div>
-      {/* <img src={large} alt="" /> */}
-      <h1>{user.cell}</h1>
+    <div style={{ padding: "20px", display: "flex" }}>
+      <div>{cell && <Avatar alt="Remy Sharp" src={picture.large} />}</div>
+      <div style={{ marginLeft: "8px" }}>
+        {props.user.cell && (
+          <div>
+            <small>
+              {name.first} {name.last}
+            </small>
+            <br />
+            <small> {email} </small>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

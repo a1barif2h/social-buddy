@@ -20,7 +20,6 @@ import CardContent from "@material-ui/core/CardContent";
 import { useParams, Link } from "react-router-dom";
 import Comments from "../Comments/Comments";
 import CardActions from "@material-ui/core/CardActions";
-import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -99,7 +98,7 @@ const PostDetails = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPost(data));
-  }, []);
+  }, [postId]);
   const [comments, setComments] = useState([]);
   useEffect(() => {
     const url =
@@ -107,7 +106,7 @@ const PostDetails = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setComments(data));
-  }, []);
+  }, [postId]);
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);

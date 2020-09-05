@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import NotFound from "./components/NotFound/NotFound";
-import Comments from "./components/Comments/Comments";
 import PostDetails from "./components/PostDetails/PostDetails";
 
 function App() {

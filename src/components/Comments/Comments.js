@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -15,13 +15,24 @@ const useStyles = makeStyles({
 });
 
 const Comments = (props) => {
+  const [users, setUsers] = useState({});
+  let user = [];
+  for (let i = 0; i < users.length; i++) {
+    user = users[i];
+  }
+  useEffect(() => {
+    const url = "https://randomuser.me/api/?results=5";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setUsers(data.results));
+  }, []);
   const classes = useStyles();
   const { body, name, email } = props.comment;
   return (
     <div>
       <Card className={classes.root}>
         <CardActionArea>
-          <Users></Users>
+          <Users user={user}></Users>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               {name}
