@@ -16,6 +16,7 @@ const useStyles = makeStyles({
   },
 });
 const Posts = (props) => {
+  // console.log(props);
   const { id, title, body } = props.post;
   const classes = useStyles();
   return (
@@ -28,9 +29,9 @@ const Posts = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link to="/comments">
+        <Link style={{ textDecoration: "none" }} to={"/post/" + id}>
           <Button variant="contained" color="primary">
-            See Comment
+            See More
           </Button>
         </Link>
       </CardActions>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import NotFound from "./components/NotFound/NotFound";
 import Comments from "./components/Comments/Comments";
+import PostDetails from "./components/PostDetails/PostDetails";
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/comments">
-            <Comments />
+          <Route path="/post/:postId">
+            <PostDetails />
           </Route>
           <Route path="*">
             <NotFound />
