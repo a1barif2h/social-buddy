@@ -27,17 +27,27 @@ const Comments = (props) => {
       .then((data) => setUsers(data.results));
   }, []);
   const classes = useStyles();
-  const { body, name, email } = props.comment;
+  const { body, name } = props.comment;
   return (
     <div>
       <Card className={classes.root}>
         <CardActionArea>
           <Users user={user}></Users>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography
+              style={{ color: "#2196f3" }}
+              gutterBottom
+              variant="h5"
+              component="h2"
+            >
               {name}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography
+              style={{ color: "#d84315" }}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
               {body}
             </Typography>
           </CardContent>

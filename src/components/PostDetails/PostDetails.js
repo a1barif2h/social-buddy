@@ -263,22 +263,37 @@ const PostDetails = () => {
         {renderMobileMenu}
         {renderMenu}
       </div>
-      <Card className={classes.root}>
+      <Card style={{ backgroundColor: "cyan" }} className={classes.root}>
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography
+              style={{ color: "#f50057" }}
+              gutterBottom
+              variant="h5"
+              component="h2"
+            >
               Post No: {postId}
             </Typography>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography
+              style={{ color: "#2196f3" }}
+              gutterBottom
+              variant="h5"
+              component="h2"
+            >
               {post.title}
             </Typography>
 
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography
+              style={{ color: "#d84315" }}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
               {post.body}
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>Comments:</CardActions>
+        <CardActions style={{ color: "orange" }}>Comments:</CardActions>
         {comments.map((comment) => (
           <Comments key={comment.id} comment={comment}></Comments>
         ))}

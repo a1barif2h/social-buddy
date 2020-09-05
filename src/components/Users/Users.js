@@ -8,7 +8,7 @@ const Users = (props) => {
       <div>{cell && <Avatar alt="Remy Sharp" src={picture.large} />}</div>
       <div style={{ marginLeft: "8px" }}>
         {props.user.cell && (
-          <div>
+          <div style={{ color: "blue" }}>
             <small>
               {name.first} {name.last}
             </small>
